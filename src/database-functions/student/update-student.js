@@ -1,4 +1,4 @@
-const admin = require('../../../config/firebase_config');
+const admin = require('../../config/firebase_config');
 const { COLLECTIONS } = require('../../constants/collection-constants');
 
 const db = admin.firestore();

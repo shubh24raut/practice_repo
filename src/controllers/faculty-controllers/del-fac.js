@@ -1,7 +1,7 @@
 const uuid = require('uuid');
 const { deleteFaculty } = require('../../database-functions/faculty/delete-faculty');
 const generateResponse = require('../../utils/generate-response');
-//const admin = require('../../../config/firebase_config');
+//const admin = require('../../config/firebase_config');
 
 const delFacController = async (req, res, next) => {
   

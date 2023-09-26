@@ -3,13 +3,13 @@ const { COLLECTIONS } = require('../../constants/collection-constants');
 const db = admin.firestore();
 
 
-const createDepartment = async collegeData => {
+const getDeptById = async deptId => {
         try {
-          await db.collection(COLLECTIONS.DEPARTMENT).doc(collegeData.id).create(collegeData);
-          return true;
+          const dept = await db.collection(COLLECTIONS.DEPARTMENT).doc(deptId).get();
+          return dept;
         } catch (error) {
           return error;
         }
 };
-module.exports = {createDepartment};
+module.exports = {getDeptById};
 

@@ -1,4 +1,4 @@
-const admin = require('../../../config/firebase_config');
+const admin = require('../../config/firebase_config');
 const { COLLECTIONS } = require('../../constants/collection-constants');
 const generateResponse = require('../../utils/generate-response');
 const db = admin.firestore();
@@ -52,7 +52,7 @@ module.exports = { deleteFaculty };
 
 
 
-//const admin = require('../../../config/firebase_config');
+//const admin = require('../../config/firebase_config');
 //const { COLLECTIONS } = require('../../constants/collection-constants');
 
 //const db = admin.firestore();

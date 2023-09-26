@@ -1,7 +1,7 @@
 const uuid = require('uuid');
 const { updateDepartment } = require('../../database-functions/department/update-department');
 const generateResponse = require('../../utils/generate-response');
-
+const lodash = require('lodash');
 const updDeptController = async (req, res, next) => {
   try {
     const {
@@ -15,7 +15,7 @@ const updDeptController = async (req, res, next) => {
       },
     } = req;
     
-    const data = {
+    let data = {
       id,
       name,
       total_classrooms,
@@ -23,6 +23,7 @@ const updDeptController = async (req, res, next) => {
       total_students,
       total_lab
     };
+    data = lodash.pickBy(data, lodash.identity);
     await updateDepartment(data);
 
     return res.send(generateResponse("dept updated"));

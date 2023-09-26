@@ -13,8 +13,9 @@
 const express = require('express');
 
 const addDeptController = require('../../controllers/department-controllers/add-dept');
-const {addDeptValidator } = require('../../validators/department_validators');
+const {addDeptValidator, updDeptValidator } = require('../../validators/department_validators');
 const validateSchema = require('../../validators/validator');
+const updDeptController = require('../../controllers/department-controllers/upd-dept');
 
 const router = express.Router();
 //router.get('/test', (req,res) => {
@@ -23,5 +24,6 @@ const router = express.Router();
 
 
 router.post('/add-dept',addDeptValidator,validateSchema, addDeptController);
+router.put('/upd-dept',updDeptValidator,validateSchema, updDeptController);
 
 module.exports=router;

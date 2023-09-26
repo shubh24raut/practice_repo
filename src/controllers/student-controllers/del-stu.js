@@ -1,7 +1,7 @@
 const uuid = require('uuid');
 const { deleteStudent } = require('../../database-functions/student/delete-student');
 const generateResponse = require('../../utils/generate-response');
-//const admin = require('../../../config/firebase_config');
+//const admin = require('../../config/firebase_config');
 
 const delStuController = async (req, res, next) => {
   
