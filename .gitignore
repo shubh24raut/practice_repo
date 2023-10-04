@@ -1,18 +1,18 @@
-**/build
-**/logs
+build
+logs
 *.log
-**/npm-debug.log*
-**/firebase-debug.log*
-**/firebase-debug..log
-**/.firebase/
-**/node_modules/
-**/.env
-**/.env.*
-**/node_modules/
+npm-debug.log*
+firebase-debug.log*
+firebase-debug..log
+.firebase/
+node_modules/
+.env
+.env.*
+node_modules/
 
-**/.runtimeconfig.json
+.runtimeconfig.json
 
-**/.DS_Store
+.DS_Store
 
 .vscode/
 *.swp

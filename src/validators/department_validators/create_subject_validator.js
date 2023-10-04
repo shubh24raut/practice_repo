@@ -3,8 +3,8 @@ const { checkSchema } = require('express-validator');
 
 const getMessage = require('../../utils/get-message');
 
-const addCourseValidator = checkSchema({
-    course_name:{
+const addSubjectValidator = checkSchema({
+    sub_name:{
     exists: {
       errorMessage: getMessage('INPUT_REQUIRED').replace('{{ input }}', 'name'),
     },
@@ -12,12 +12,12 @@ const addCourseValidator = checkSchema({
       errorMessage: getMessage('INPUT_STRING').replace('{{ input }}', 'name'),
     },
   },
-  course_fees: {
+  sub_marks: {
     optional: true,
-    isString: {
-      errorMessage: getMessage('INPUT_STRING').replace(
+    isNumeric: {
+      errorMessage: getMessage('INPUT_Number').replace(
         '{{ input }}',
-        'fees',
+        'marks',
       ),
     },
   },
@@ -33,4 +33,4 @@ const addCourseValidator = checkSchema({
   
 });
 
-module.exports = addCourseValidator;
+module.exports = addSubjectValidator;

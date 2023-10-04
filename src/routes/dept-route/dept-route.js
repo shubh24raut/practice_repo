@@ -21,6 +21,8 @@ const updDeptController = require('../../controllers/department-controllers/upd-
 const {addDeptValidator,updDeptValidator } = require('../../validators/department_validators');
 const addCourseController= require('../../controllers/department-controllers/add-course');
 const addCourseValidator=require('../../validators/department_validators/create_course_validator');
+const addSubjectController = require('../../controllers/department-controllers/add-subjects');
+const addSubjectValidator = require('../../validators/department_validators/create_subject_validator');
 
 
 //router.get('/test', (req,res) => {
@@ -30,5 +32,6 @@ const addCourseValidator=require('../../validators/department_validators/create_
 router.post('/add-course',addCourseValidator,validateSchema,addCourseController);
 router.post('/add-dept',addDeptValidator,validateSchema, addDeptController);
 router.put('/upd-dept',updDeptValidator,validateSchema, updDeptController);
+router.post('/add-subject',addSubjectValidator,validateSchema,addSubjectController);
 
 module.exports=router;

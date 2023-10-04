@@ -1,7 +1,7 @@
-const admin = require('../../config/firebase_config');
-const { COLLECTIONS } = require('../../constants/collection-constants');
 
-const db = admin.firestore();
+const admin=require('../../config/firebase_config');
+const {COLLECTIONS}= require('../../constants/collection-constants');
+const db= admin.firestore();
 
 const updateFaculty = async collegeData => {
   try {

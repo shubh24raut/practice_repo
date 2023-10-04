@@ -1,6 +1,9 @@
-const admin = require('../../config/firebase_config');
-const { COLLECTIONS } = require('../../constants/collection-constants');
-const db = admin.firestore();
+
+const admin=require('../../config/firebase_config');
+const {COLLECTIONS}= require('../../constants/collection-constants');
+const db=admin.firestore();
+
+
 
 
 const getDeptById = async deptId => {
