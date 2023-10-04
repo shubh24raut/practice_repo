@@ -15,7 +15,7 @@ const addDeptValidator = checkSchema({
   total_lab: {
     optional: true,
     isNumeric: {
-      errorMessage: getMessage('INPUT_NUMERIC').replace(
+      errorMessage: getMessage('INPUT_NUMBER').replace(
         '{{ input }}',
         'total_lab',
       ),
@@ -24,7 +24,7 @@ const addDeptValidator = checkSchema({
   total_students: {
     optional: true,
     isNumeric: {
-      errorMessage: getMessage('INPUT_NUMERIC').replace(
+      errorMessage: getMessage('INPUT_NUMBER').replace(
         '{{ input }}',
         'total_students',
       ),
@@ -33,7 +33,7 @@ const addDeptValidator = checkSchema({
   total_faculties: {
     optional: true,
     isNumeric: {
-      errorMessage: getMessage('INPUT_NUMERIC').replace(
+      errorMessage: getMessage('INPUT_NUMBER').replace(
         '{{ input }}',
         'total_faculties',
       ),
@@ -42,7 +42,7 @@ const addDeptValidator = checkSchema({
   total_classrooms: {
     optional: true,
     isNumeric: {
-      errorMessage: getMessage('INPUT_NUMERIC').replace(
+      errorMessage: getMessage('INPUT_NUMBER').replace(
         '{{ input }}',
         'total_classrooms',
       ),

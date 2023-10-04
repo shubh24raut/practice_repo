@@ -5,7 +5,6 @@ const db = admin.firestore();
 
 const updateDepartment = async collegeData => {
         try {
-          console.log(collegeData);
           await db.collection(COLLECTIONS.DEPARTMENT).doc(collegeData.id).update(collegeData);
           return true;
         } catch (error) {

@@ -9,8 +9,16 @@ const updFacValidator = checkSchema({
     },
     isString: {
       errorMessage: getMessage('INPUT_STRING').replace('{{ input }}', 'name'),
+    },},
+    id:{
+      exists: {
+        errorMessage: getMessage('INPUT_REQUIRED').replace('{{ input }}', 'id'),
+      },
+      isString: {
+        errorMessage: getMessage('INPUT_STRING').replace('{{ input }}', 'id'),
+      },
     },
-  },
+  
   designation: {
     optional: true,
     isString: {

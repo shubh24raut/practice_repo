@@ -1,7 +1,6 @@
-const uuid = require('uuid');
 const {updateFaculty} = require('../../database-functions/faculty/update-faculty');
 const generateResponse = require('../../utils/generate-response');
-
+const lodash = require('lodash');
 const updFacController = async (req, res, next) => {
   try {
     const {
@@ -18,6 +17,7 @@ const updFacController = async (req, res, next) => {
     } = req;
     
     const data = {
+      
       id,
       contact,
       country_code,
@@ -26,6 +26,7 @@ const updFacController = async (req, res, next) => {
       email,
       name,
     };
+    data = lodash.pickBy(data, lodash.identity);
     await updateFaculty(data);
 
     return res.send(generateResponse("faculty updated"));

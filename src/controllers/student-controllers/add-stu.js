@@ -35,12 +35,12 @@ const addStuController = async (req, res, next) => {
       throw new ApiError(httpStatus.NOT_FOUND, 'Dept not found')
     }
   const deptData = department.data();
-  const { total_students: prevStudentCount } = deptData;
-  await updateDepartment({id: departId, total_students: prevStudentCount + 1}); 
-  return res.send(generateResponse("student added"));
+  const { total_students: totalStudents } = deptData;
+  await updateDepartment({id: departId, total_students: totalStudents + 1}); 
+  return res.send(generateResponse("student is added"));
   } catch (error) {
     return next(error);
   }
-  
 };
 module.exports = addStuController;
+

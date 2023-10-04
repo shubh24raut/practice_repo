@@ -1,11 +1,11 @@
 const messages = {
     // for validators:
-  //   INPUT_REQUIRED: "{{ input }} input not found.",
+   INPUT_REQUIRED: "{{ input }} input not found.",
     INPUT_INVALID: '{{ input }} input is Invalid.',
     INPUT_STRING: '{{ input }} input should be string.',
     INVALID_URL: '{{ input }} input should be URL.',
     INVALID_TYPE: '{{ input }} input is not valid type.',
-    INVALID_NUMERIC:'{{ input }} input is not valid type',
+    INPUT_NUMBER:'{{ input }} input should be numeric type',
   
     // devOps
     STATUS_UPDATED: 'Status updated',

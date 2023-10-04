@@ -7,7 +7,7 @@ const addDeptController = async (req, res, next) => {
     const {
       body: {
         
-        name = '',
+        name ,
         total_classrooms = '',
         total_faculties = '',
         total_students = '',
@@ -25,7 +25,8 @@ const addDeptController = async (req, res, next) => {
     };
     await createDepartment(data);
 
-    return res.send(generateResponse("dept added"));
+    return res.send(generateResponse("a new dept is added"));
+    
   } catch (error) {
     return next(error);
   }

@@ -20,13 +20,13 @@ const addStuValidator = checkSchema({
   admission_year: {
     optional: true,
     isNumeric: {
-      errorMessage: getMessage('INPUT_NUMERIC').replace('{{ input }}','admission year',),
+      errorMessage: getMessage('INPUT_NUMBER').replace('{{ input }}','admission year',),
     },
   },
   contact: {
     optional: true,
     isNumeric: {
-      errorMessage: getMessage('INPUT_NUMERIC').replace( '{{ input }}','contact', ),
+      errorMessage: getMessage('INPUT_STRING').replace( '{{ input }}','contact', ),
     },
   },
   depart_Id: {

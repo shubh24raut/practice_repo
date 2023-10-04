@@ -12,7 +12,7 @@ const ApiError = require('./src/utils/ApiError');
 const { errorConverter, errorHandler } = require('./src/utils/error-handler');
 
 const app = express();
-const PORT = 3000;
+const PORT = 2000;
 
 // httpProxy.createProxyServer({target: 'http://localhost:5000'}).listen(PORT);
 
