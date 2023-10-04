@@ -1,5 +1,6 @@
-const addDeptController= require('../department-controllers/add-dept');
+const timetableController= require('../department-controllers/add-timetable');
 
-const updDeptController=require('../department-controllers/upd-dept');
+const addDeptController = require('../department-controllers/add-dept');
+const updDeptController = require('../department-controllers/upd-dept');
 
-module.exports={addDeptController,updDeptController};
+module.exports={addDeptController,updDeptController,timetableController};  

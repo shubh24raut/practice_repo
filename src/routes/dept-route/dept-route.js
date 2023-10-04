@@ -23,7 +23,7 @@ const addCourseController= require('../../controllers/department-controllers/add
 const addCourseValidator=require('../../validators/department_validators/create_course_validator');
 const addSubjectController = require('../../controllers/department-controllers/add-subjects');
 const addSubjectValidator = require('../../validators/department_validators/create_subject_validator');
-
+const timetableController = require('../../controllers/department-controllers/add-timetable');
 
 //router.get('/test', (req,res) => {
   //res.send('Hello');
@@ -33,5 +33,7 @@ router.post('/add-course',addCourseValidator,validateSchema,addCourseController)
 router.post('/add-dept',addDeptValidator,validateSchema, addDeptController);
 router.put('/upd-dept',updDeptValidator,validateSchema, updDeptController);
 router.post('/add-subject',addSubjectValidator,validateSchema,addSubjectController);
+router.post('/add-timetable',timetableController,validateSchema);
+
 
 module.exports=router;

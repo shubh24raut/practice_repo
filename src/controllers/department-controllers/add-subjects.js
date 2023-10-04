@@ -7,7 +7,7 @@ const addSubjectController = async (req, res, next) => {
     const {
       body: {
         
-        sub_name = '',
+        name = '',
         sub_marks = '',
         departId='',
         sub_books =''
@@ -16,7 +16,7 @@ const addSubjectController = async (req, res, next) => {
     const id= uuid.v4();
     const data = {
       id,
-      sub_name,
+      name,
       sub_marks,
       departId,
       sub_books

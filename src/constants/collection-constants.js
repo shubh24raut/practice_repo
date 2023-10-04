@@ -5,6 +5,7 @@ module.exports = {
     FACULTY:'faculty',
     COURSES:'courses',
     SUBJECT:'subject',
+    TIMETABLE:'timetable'
 
   },
 };

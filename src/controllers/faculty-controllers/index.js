@@ -1,4 +1,5 @@
-const addFacController= require('../faculty-controllers/add-fac');
+
+const addFacController= require('../faculty-controllers/add-fac');   
 const delFacController= require('../faculty-controllers/del-fac');
 const updFacController=require('../faculty-controllers/upd-fac');
 

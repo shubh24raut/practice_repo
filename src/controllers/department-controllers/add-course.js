@@ -7,7 +7,7 @@ const addCourseController = async (req, res, next) => {
     const {
       body: {
         
-        course_name = '',
+        name = '',
         course_fees = '',
         departId='',
         course_year =''
@@ -16,7 +16,7 @@ const addCourseController = async (req, res, next) => {
     const id= uuid.v4();
     const data = {
       id,
-      course_name,
+      name,
       course_fees,
       departId,
       course_year

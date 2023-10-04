@@ -4,7 +4,7 @@ const { checkSchema } = require('express-validator');
 const getMessage = require('../../utils/get-message');
 
 const addSubjectValidator = checkSchema({
-    sub_name:{
+    name:{
     exists: {
       errorMessage: getMessage('INPUT_REQUIRED').replace('{{ input }}', 'name'),
     },
