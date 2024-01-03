@@ -7,7 +7,7 @@ const addDeptController = async (req, res, next) => {
     const {
       body: {
         
-        name = '',
+        name = 'name',
         total_classrooms = '',
         total_faculties = '',
         total_students = '',
