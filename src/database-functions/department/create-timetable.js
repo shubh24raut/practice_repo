@@ -2,6 +2,7 @@ const { times } = require('lodash');
 const admin = require('../../config/firebase_config');
 const { COLLECTIONS } = require('../../constants/collection-constants');
 const db = admin.firestore();
+//const year=require('../../controllers/department-controllers/timetable-controller');
 
 const createTimetable = async (data) => {
   try {
@@ -59,14 +60,14 @@ const schedulePattern = {
     { time: '3-5', type: 'course', name: 'course' },
   ]
 };
-
 async function getSubjects (id) {
   try {
     const subjectsRef = db.collection(COLLECTIONS.DEPARTMENT)
       .doc(id)
       .collection(COLLECTIONS.SUBJECT);
 
-    const snapshot = await subjectsRef.get();
+      let year ='';
+    const snapshot = await subjectsRef.where('year','==',year).get();
     const subjectsData = [];
 
     snapshot.forEach((doc) => {
@@ -85,8 +86,10 @@ async function getCourses(id) {
     const coursesRef = db.collection(COLLECTIONS.DEPARTMENT)
       .doc(id)
       .collection(COLLECTIONS.COURSES);
+    
+      let year='';
 
-    const snapshot = await coursesRef.get();
+    const snapshot = await coursesRef.where('year','==',year).get();
     const coursesData = [];
 
     snapshot.forEach((doc) => {
@@ -102,7 +105,7 @@ async function getCourses(id) {
 
 function generateTimetable(subjects, courses) {
   const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
+  
   const timetable = {};
   daysOfWeek.forEach((day) => {
     if (schedulePattern[day]) {
@@ -111,17 +114,16 @@ function generateTimetable(subjects, courses) {
       const availableCourses = [...courses]; // Create a copy of courses
 
       schedulePattern[day].forEach((period) => {
-        const { time, type } = period;
+        const { time, type} = period;
         let name = '';
 
-        if (type === 'subject' && availableSubjects.length > 0) {
+        if (type === 'subject'  && availableSubjects.length > 0) {
           const randomIndex = Math.floor(Math.random() * availableSubjects.length);
           name = availableSubjects.splice(randomIndex, 1)[0].name;
           
-        } else if (type === 'course' && availableCourses.length > 0) {
+        } else if (type === 'course'  && availableCourses.length > 0) {
           const randomIndex = Math.floor(Math.random() * availableCourses.length);
           name = availableCourses.splice(randomIndex, 1)[0].name;
-          
         }
 
         lectures.push({ time, type, name });
@@ -129,10 +131,8 @@ function generateTimetable(subjects, courses) {
       timetable[day] = { lectures };
     }
   });
-
-  return timetable;
+ return timetable;
 }
-
 function getRandomItem(array) {
   if (array.length === 0) {
     return null;

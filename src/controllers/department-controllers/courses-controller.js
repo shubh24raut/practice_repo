@@ -10,6 +10,7 @@ const addCourseController = async (req, res, next) => {
         name = '',
         marks = '',
         departId='',
+        year =''
       },
     } = req;
     const id= uuid.v4();
@@ -17,7 +18,8 @@ const addCourseController = async (req, res, next) => {
       id,
       name,
       marks,
-      departId
+      departId,
+      year
     };
     await createCourses(data);
 

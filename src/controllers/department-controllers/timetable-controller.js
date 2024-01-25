@@ -8,12 +8,14 @@ const timetableController = async (req, res, next) => {
       body: {
         id='',
        day = '',
+       year =''
       },
     } = req;
    
     const data = {
       id,
-      day
+      day,
+      year
     };
     console.log(data)
     const Result = await createTimetable(data);

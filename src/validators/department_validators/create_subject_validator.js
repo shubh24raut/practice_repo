@@ -29,6 +29,15 @@ const addSubValidator = checkSchema({
         'marks',
       ),
     },
+  },
+  year: {
+    optional: true,
+    isString: {
+      errorMessage: getMessage('INPUT_STRING').replace(
+        '{{ input }}',
+        'year',
+      ),
+    },
   }
 });
 
