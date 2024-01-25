@@ -12,3 +12,5 @@ const updateStudent = async collegeData => {
   }
 };
 module.exports = {updateStudent};
+
+

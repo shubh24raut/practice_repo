@@ -3,10 +3,11 @@ const { COLLECTIONS } = require('../../constants/collection-constants');
 const db = admin.firestore();
 
 
-const createDepartment = async collegeData => {
+const createDepartment = async data => {
         try {
-          await db.collection(COLLECTIONS.DEPARTMENT).doc(collegeData.id).create(collegeData);
+          await db.collection(COLLECTIONS.DEPARTMENT).doc(data.id).create(data);
           return true;
+          
         } catch (error) {
           return error;
         }

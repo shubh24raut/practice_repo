@@ -1,6 +1,10 @@
 const uuid = require('uuid');
 const {createFaculty} = require('../../database-functions/faculty/create-faculty');
 const generateResponse = require('../../utils/generate-response');
+const { updateDepartment } = require('../../database-functions/department/update-department');
+const { getDeptById } = require('../../database-functions/department/get-dept-by-id');
+const ApiError = require('../../utils/ApiError');
+const httpStatus = require('http-status');
 
 const addFacController = async (req, res, next) => {
   try {
@@ -27,12 +31,17 @@ const addFacController = async (req, res, next) => {
       name,
     };
     await createFaculty(data);
-    return res.send(generateResponse("faculty added"));
+    const department = await getDeptById(departId);
+    if(!department.exists){
+      throw new ApiError(httpStatus.NOT_FOUND, 'Dept not found')
+    }
+  const deptData = department.data();
+  const { total_faculties: prevFacultyCount } = deptData;
+  await updateDepartment({id: departId, total_faculties: prevFacultyCount + 1}); 
+  return res.send(generateResponse("faculty added"));
   } catch (error) {
     return next(error);
   }
 };
-
-
 module.exports = addFacController;
 

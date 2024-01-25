@@ -1,7 +1,7 @@
-const uuid = require('uuid');
+
 const {updateStudent} = require('../../database-functions/student/update-student');
 const generateResponse = require('../../utils/generate-response');
-
+const lodash = require('lodash');
 const updStuController = async (req, res, next) => {
   try {
     const {
@@ -25,6 +25,7 @@ const updStuController = async (req, res, next) => {
       email,
       name,
     };
+    data = lodash.pickBy(data, lodash.identity);
     await updateStudent(data);
 
     return res.send(generateResponse("student updated"));
@@ -34,3 +35,4 @@ const updStuController = async (req, res, next) => {
   
 };
 module.exports = updStuController;
+

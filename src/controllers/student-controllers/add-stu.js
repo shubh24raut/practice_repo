@@ -41,6 +41,6 @@ const addStuController = async (req, res, next) => {
   } catch (error) {
     return next(error);
   }
-  
 };
 module.exports = addStuController;
+

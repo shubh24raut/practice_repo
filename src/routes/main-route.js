@@ -5,18 +5,13 @@ const router = express.Router();
 
 const departmentRoutes = require('./dept-route/dept-route');
 
-const addFacultyRoutes = require('./fac-route/add-fac-route');
-const delFacultyRoutes = require('./fac-route/del-fac-route');
-const updFacultyRoute = require('./fac-route/upd-fac-route');
+const facultyRoutes = require('./fac-route/faculty-route');
 
-const addStudentRoutes = require('./stu-route/add-stu-route');
-const delStudentRoutes = require('./stu-route/del-stu-route');
-const updStudentRoute = require('./stu-route/upd-stu-route')
-
+const studentRoutes = require('./stu-route/student-route');
 
 router.use('/department', departmentRoutes);
-router.use('/faculty', addFacultyRoutes, delFacultyRoutes,updFacultyRoute);
-router.use('/student', addStudentRoutes, delStudentRoutes,updStudentRoute);
+router.use('/faculty', facultyRoutes);
+router.use('/student', studentRoutes);
 
 module.exports = router;
 
